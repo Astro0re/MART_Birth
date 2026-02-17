@@ -8,7 +8,7 @@ def create_table():
         cursor = conn.cursor()
         cursor.execute("""
             CREATE TABLE IF NOT EXISTS birth_tracker(
-                id INT PRIMARY KEY AUTOINCREMENT,
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
                 f_name TEXT NOT NULL,
                 l_name TEXT NOT NULL,
                 cycle_id VARCHAR UNIQUE,
