@@ -34,15 +34,15 @@ def main():
     st.title("MART BABIES")
 
     # Authentication: require an access code stored in environment variable ACCESS_CODE
-    ACCESS_CODE = os.getenv("ACCESS_CODE")
-    if not ACCESS_CODE:
-        st.error("Server not configured: set ACCESS_CODE in a .env file or environment variables.")
-        st.stop()
+    #ACCESS_CODE = os.getenv("ACCESS_CODE")
+    #if not ACCESS_CODE:
+    #    st.error("Server not configured: set ACCESS_CODE in a .env file or environment variables.")
+    #    st.stop()
 
-    access = st.text_input("Access code:", type="password", key="access_code")
-    if access != ACCESS_CODE:
-        st.warning("Enter the correct access code to use this app.")
-        st.stop()
+    #access = st.text_input("Access code:", type="password", key="access_code")
+    #if access != ACCESS_CODE:
+    #    st.warning("Enter the correct access code to use this app.")
+    #    st.stop()
 
     f_name = st.text_input("First Name:", key="f_name")
     l_name = st.text_input("Last Name:", key="l_name")
