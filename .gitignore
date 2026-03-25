@@ -1,3 +1,2 @@
-# Ignore local environment files containing secrets
 .env
-birth_track.db
+requirements.txt
