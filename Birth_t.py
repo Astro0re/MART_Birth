@@ -1,27 +1,20 @@
-# Supabase Integrations
-from dotenv import load_dotenv
+# Packages 
 import os
+from dotenv import load_dotenv
 from supabase import create_client, Client
 
 # Load environment variables from .env
 load_dotenv()
 
-# Fetch variables
-from dotenv import load_dotenv
-import os
-load_dotenv()
+SUPABASE_URL = os.getenv("SUPABASE_URL")
+SUPABASE_KEY = os.getenv("SUPABASE_KEY")
+
+if not SUPABASE_URL or not SUPABASE_KEY:
+    raise ValueError("SUPABASE_URL and SUPABASE_KEY environment variables must be set")
+
+supabase : Client = create_client(SUPABASE_URL, SUPABASE_KEY)
 
 
-url = os.getenv("SUPABASE_URL")
-key = os.getenv("SUPABASE_KEY")
-DB = os.getenv("SUPABASE_DB")
-
-supabase : Client = create_client( url , key)
-
-
-
-import sqlite3
-from dotenv import load_dotenv
 import streamlit as st
 
 # Load environment variables from .env (if present)
@@ -53,8 +46,7 @@ def main():
             print(f'Erro due to :{e}')  
 
     if st.button("Submit", key='SUB'):
-        data = [
-            {
+        data = {
             f_name : st.session_state["f_name_d"],
             l_name : st.session_state["l_name_d"], 
             cycle_id : st.session_state["cycle_id_d"], 
@@ -63,7 +55,7 @@ def main():
             birth_date : st.session_state["birth_date_d"], 
             comments : st.session_state["Comm_d"]
             }
-        ]
+    
         add_values('birth_track', data)
 
 
