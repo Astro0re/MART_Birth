@@ -27,16 +27,17 @@ def main():
             print(f'Erro due to :{e}')  
 
     if st.button("Submit", key='SUB'):
-        data = {
-            f_name : st.session_state["f_name_d"],
-            l_name : st.session_state["l_name_d"], 
-            cycle_id : st.session_state["cycle_id_d"], 
-            email : st.session_state["email_d"], 
-            number : st.session_state["number_d"], 
-            birth_date : st.session_state["birth_date_d"], 
-            comments : st.session_state["Comm_d"]
+        for_data = {
+            "f_name" : st.session_state["f_name_d"],
+            "l_name" : st.session_state["l_name_d"], 
+            "cycle_id" : st.session_state["cycle_id_d"], 
+            "email" : st.session_state["email_d"], 
+            "number" : st.session_state["number_d"], 
+            "birth_date" : st.session_state["birth_date_d"], 
+            "comments" : st.session_state["Comm_d"]
             }
-    
+
+        return(for_data)
         add_values('birth_track', data)
 
 
