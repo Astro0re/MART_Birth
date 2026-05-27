@@ -1,5 +1,6 @@
 # Packages 
 import os
+import streamlit as st
 from dotenv import load_dotenv
 from supabase import create_client
 
@@ -26,6 +27,8 @@ def main():
                 "birth_date" : Birth_t.st.session_state["birth_date_d"], 
                 "comments" : Birth_t.st.session_state["Comm_d"]
                 }).execute()
+    if True: 
+        st.info('Data Saved')
 
 if __name__ == "__main__":
     
