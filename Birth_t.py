@@ -15,7 +15,9 @@ l_name = st.text_input("Last Name:", key="l_name_d")
 cycle_id = st.text_input("Cycle_ID:", key="cycle_id_d")
 email = st.text_input("Email:", key="email_d")
 number = st.text_input("Phone Number:", key="number_d")
-birth_date = st.date_input("Date of Birth: ", key="birth_date_d")
+birth_year = st.text_input("Birth Year: ", key="birth_year")
+birth_month = st.text_input("Birth Month(1-12): ", key="birth_month")
+birth_date= st.text_input("Birth Day(1-31): ", key="birth_date")
 comments = st.text_area("Patient Comment", max_chars=150, placeholder="Comments", key='Comm_d') 
 
  
@@ -40,7 +42,9 @@ if st.button("Submit", key='SUB'):
                 "cycle_id" : st.session_state["cycle_id_d"], 
                 "email" : st.session_state["email_d"], 
                 "number" : st.session_state["number_d"], 
-                "birth_date" : st.session_state["birth_date_d"], 
+                "birth_year" : st.session_state["birth_year"],
+                "birth_mont" : st.session_state["birth_month"],
+                "birth_date" : st.session_state["birth_date"], 
                 "comments" : st.session_state["Comm_d"]
                 }).execute()
     if True: 
