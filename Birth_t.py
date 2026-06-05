@@ -36,14 +36,14 @@ if st.button("Submit", key='SUB'):
 
 
     # Supabase input command
-    supabase.table("").insert({
+    supabase.table("birth_track").insert({
                 "f_name" : st.session_state["f_name_d"],
                 "l_name" : st.session_state["l_name_d"], 
                 "cycle_id" : st.session_state["cycle_id_d"], 
                 "email" : st.session_state["email_d"], 
-                "number" : st.session_state["number_d"], 
+                "p_number" : st.session_state["number_d"], 
                 "birth_year" : st.session_state["birth_year"],
-                "birth_mont" : st.session_state["birth_month"],
+                "birth_month" : st.session_state["birth_month"],
                 "birth_date" : st.session_state["birth_date"], 
                 "comments" : st.session_state["Comm_d"]
                 }).execute()
