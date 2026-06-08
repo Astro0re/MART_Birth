@@ -1,7 +1,6 @@
 # Packages 
 import os
 import streamlit as st
-from dotenv import load_dotenv
 from supabase import create_client
 
 
@@ -26,8 +25,8 @@ if st.button("Submit", key='SUB'):
 
     # Load environment variables from .env
 
-    SUPABASE_URL = os.getenv("SUPABASE_URL")
-    SUPABASE_KEY = os.getenv("SUPABASE_KEY")
+    SUPABASE_URL = 'https://qeecgamtitjgtrjfgavs.supabase.co'
+    SUPABASE_KEY = 'sb_publishable_wrTu9IK5z9iQyt0C7dYk0g_xfOztP_L'
 
     if not SUPABASE_URL or not SUPABASE_KEY:
         raise ValueError("SUPABASE_URL and SUPABASE_KEY environment variables must be set")
