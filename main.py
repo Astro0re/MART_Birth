@@ -15,9 +15,14 @@ l_name = st.text_input("Last Name:", key="l_name_d")
 cycle_id = st.text_input("Cycle_ID:", key="cycle_id_d")
 email = st.text_input("Email:", key="email_d")
 number = st.text_input("Phone Number:", key="number_d")
-birth_year = st.text_input("Birth Year: ", key="birth_year")
-birth_month = st.text_input("Birth Month(1-12): ", key="birth_month")
-birth_date= st.text_input("Birth Day(1-31): ", key="birth_date")
+num_baby = int(st.text_input("How many babies(0-5)", key="Baby_num"))
+
+for i in num_baby:
+    name_baby = st.text_input("Baby Name (Baby {i}): ", key="baby_name{i}")
+    birth_year = st.text_input("Birth Year (Baby {i}): ", key="birth_year{i}")
+    birth_month = st.text_input("Birth Month(1-12) (Baby {i}): ", key="birth_month{i}")
+    birth_date= st.text_input("Birth Day(1-31) (Baby {i}): ", key="birth_date{i}")
+    
 comments = st.text_area("Patient Comment", max_chars=150, placeholder="Comments", key='Comm_d') 
 
  
