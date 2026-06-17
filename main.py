@@ -15,6 +15,10 @@ l_name = st.text_input("Last Name:", key="l_name_d")
 cycle_id = st.text_input("Cycle_ID:", key="cycle_id_d")
 email = st.text_input("Email:", key="email_d")
 number = st.text_input("Phone Number:", key="number_d")
+
+# Dropdown menu that generates the input field
+st.options([1,2,3,4,5])
+
 num_baby = int(st.text_input("How many babies(0-5)", key="Baby_num"))
 
 for i in num_baby:
