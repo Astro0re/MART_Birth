@@ -8,6 +8,8 @@ from supabase import create_client
 
 
 # Web app structure
+state = st.session_state
+
 st.title("MART BABIES")
 
 f_name = st.text_input("First Name:", key="f_name_d")
@@ -46,15 +48,15 @@ if st.button("Submit", key='SUB'):
 
     # Supabase input command
     supabase.table("birth_track").insert({
-                "f_name" : st.session_state["f_name_d"],
-                "l_name" : st.session_state["l_name_d"], 
-                "cycle_id" : st.session_state["cycle_id_d"], 
-                "email" : st.session_state["email_d"], 
-                "p_number" : st.session_state["number_d"], 
-                "birth_year" : st.session_state["birth_year"],
-                "birth_month" : st.session_state["birth_month"],
-                "birth_date" : st.session_state["birth_date"], 
-                "comments" : st.session_state["Comm_d"]
+                "f_name" : state["f_name_d"],
+                "l_name" : state["l_name_d"], 
+                "cycle_id" : state["cycle_id_d"], 
+                "email" : state["email_d"], 
+                "p_number" : state["number_d"], 
+                "birth_year" : state["birth_year"],
+                "birth_month" : state["birth_month"],
+                "birth_date" : state["birth_date"], 
+                "comments" : state["Comm_d"]
                 }).execute()
     if True: 
         st.info('Data Saved')
