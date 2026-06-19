@@ -19,11 +19,12 @@ email = st.text_input("Email:", key="email_d")
 number = st.text_input("Phone Number:", key="number_d")
 
 # Dropdown menu that generates the input field
-st.options([1,2,3,4,5])
+num_baby = st.selectbox("How many babies do you have with us?" , options = [1,2,3,4,5], index = 0)
 
-num_baby = int(st.text_input("How many babies(0-5)", key="Baby_num"))
+# num_baby = int(st.text_input("How many babies(0-5)", key="Baby_num"))
 
-for i in num_baby:
+if num_baby > 0 : # drop down causes effect
+
     name_baby = st.text_input("Baby Name (Baby {i}): ", key="baby_name{i}")
     birth_year = st.text_input("Birth Year (Baby {i}): ", key="birth_year{i}")
     birth_month = st.text_input("Birth Month(1-12) (Baby {i}): ", key="birth_month{i}")
