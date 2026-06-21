@@ -14,7 +14,7 @@ st.title("MART BABIES")
 
 f_name = st.text_input("First Name:", key="f_name_d")
 l_name = st.text_input("Last Name:", key="l_name_d")
-cycle_id = st.text_input("Cycle_ID:", key="cycle_id_d")
+# cycle_id = st.text_input("Cycle_ID:", key="cycle_id_d")
 email = st.text_input("Email:", key="email_d")
 number = st.text_input("Phone Number:", key="number_d")
 
@@ -23,8 +23,7 @@ num_baby = st.selectbox("How many babies do you have with us?" , options = [1,2,
 
 # num_baby = int(st.text_input("How many babies(0-5)", key="Baby_num"))
 
-if num_baby > 0 : # drop down causes effect
-
+for i in range(num_baby):
     name_baby = st.text_input("Baby Name (Baby {i}): ", key="baby_name{i}")
     birth_year = st.text_input("Birth Year (Baby {i}): ", key="birth_year{i}")
     birth_month = st.text_input("Birth Month(1-12) (Baby {i}): ", key="birth_month{i}")
