@@ -6,9 +6,5 @@ Birth tracker with automated birth day messages every year
 # Code Base 
 Function facilitated by Python using streamlit package (v) for display
 
-# Requirements
-Input system to SQL data base to add patient Name, Contact, Date/month of Birth
-
-# Patient Info
-
 # Automation
+Python app -> Streamlit database -> Automated messaging system.
