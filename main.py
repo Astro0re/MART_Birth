@@ -24,10 +24,10 @@ num_baby = st.selectbox("How many babies do you have with us?" , options = [1,2,
 # num_baby = int(st.text_input("How many babies(0-5)", key="Baby_num"))
 
 for i in range(num_baby):
-    name_baby = st.text_input(f"Baby Name (Baby {i}): ", key=f"baby_name{i}")
-    birth_year = st.text_input(f"Birth Year (Baby {i}): ", key=f"birth_year{i}")
-    birth_month = st.text_input(f"Birth Month(1-12) (Baby {i}): ", key=f"birth_month{i}")
-    birth_date= st.text_input(f"Birth Day(1-31) (Baby {i}): ", key=f"birth_date{i}")
+    name_baby = st.text_input(f"Baby Name (Baby {i+1}): ", key=f"baby_name{i}")
+    birth_year = st.text_input(f"Birth Year (Baby {i+1}): ", key=f"birth_year{i}")
+    birth_month = st.text_input(f"Birth Month(1-12) (Baby {i+1}): ", key=f"birth_month{i}")
+    birth_date= st.text_input(f"Birth Day(1-31) (Baby {i+1}): ", key=f"birth_date{i}")
     
 comments = st.text_area("Patient Comment", max_chars=150, placeholder="Comments", key='Comm_d') 
 
