@@ -24,7 +24,7 @@ num_baby = st.selectbox("How many babies do you have with us?" , options = [1,2,
 # num_baby = int(st.text_input("How many babies(0-5)", key="Baby_num"))
 
 for i in range(num_baby):
-    st.text(f"Baby{i}")
+    st.text(f"Baby {i+1}")
     name_baby = st.text_input(f"Baby Name: ", key=f"baby_name{i}")
     birth_year = st.text_input(f"Birth Year: ", key=f"birth_year{i}")
     birth_month = st.text_input(f"Birth Month(1-12): ", key=f"birth_month{i}")
