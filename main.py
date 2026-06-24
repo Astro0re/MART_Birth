@@ -57,31 +57,31 @@ if st.button("Submit", key='SUB'):
                 #"cycle_id" : state["cycle_id_d"], 
                 "email" : state["email_d"], 
                 "p_number" : state["number_d"],
-                if state["baby_name_1"] is True:
-                    "baby_name": state["baby_name_1"],
-                elif state["baby_name_2"] is True:
-                    "baby_name": state["baby_name_2"],
-                elif state["baby_name_3"] is True:
-                    "baby_name": state["baby_name_3"],
-                elif state["baby_name_4"] is True:
-                    "baby_name": state["baby_name_4"],
-                elif state["baby_name_5"] is True:
-                    "baby_name": state["baby_name_5"],
+                #if state["baby_name_1"] is True:
+                    "baby_name_1": state["baby_name_1"],
+                #elif state["baby_name_2"] is True:
+                    "baby_name_2": state["baby_name_2"],
+                #elif state["baby_name_3"] is True:
+                    "baby_name_3": state["baby_name_3"],
+                #elif state["baby_name_4"] is True:
+                    "baby_name_4": state["baby_name_4"],
+                #elif state["baby_name_5"] is True:
+                    "baby_name_5": state["baby_name_5"],
                 #"baby_name" : state[["baby_name_1", "baby_name_2", "baby_name_3", "baby_name_4", "baby_name_5"]],
                 "baby_num" : state["num_baby"],
                 #"birth_year" : state["birth_year"],
                 #"birth_year" : state[f"birth_year{i}"], ??
                 #"birth_month" : state["birth_month"],
-                if state["birth_date_1"] is True: 
-                    "birth_date" : state["birth_date_1"],
-                elif state["birth_date_2"] is True: 
-                    "birth_date" : state["birth_date_2"],
-                elif state["birth_date_3"] is True: 
-                    "birth_date" : state["birth_date_3"],
-                elif state["birth_date_4"] is True: 
-                    "birth_date" : state["birth_date_4"],
-                elif state["birth_date_5"] is True: 
-                    "birth_date" : state["birth_date_5"],
+                #if state["birth_date_1"] is True: 
+                    "birth_date_1" : state["birth_date_1"],
+                #elif state["birth_date_2"] is True: 
+                    "birth_date_2" : state["birth_date_2"],
+                #elif state["birth_date_3"] is True: 
+                    "birth_date_3" : state["birth_date_3"],
+                #elif state["birth_date_4"] is True: 
+                    "birth_date_4" : state["birth_date_4"],
+                #elif state["birth_date_5"] is True: 
+                    "birth_date_5" : state["birth_date_5"],
                 #"birth_date" : state[["birth_date_1", "birth_date_2", "birth_date_3", "birth_date_4", "birth_date_5"]], 
                 "comments" : state["Comm_d"]
                 }).execute()
