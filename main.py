@@ -39,7 +39,6 @@ comments = st.text_area("Comment", max_chars=150, placeholder="Comments", key='C
  
 
 if st.button("Submit", key='SUB'):
-3
     # Load environment variables from .env
 
     SUPABASE_URL = 'https://qeecgamtitjgtrjfgavs.supabase.co'
@@ -58,7 +57,7 @@ if st.button("Submit", key='SUB'):
                 #"cycle_id" : state["cycle_id_d"], 
                 "email" : state["email_d"], 
                 "p_number" : state["number_d"],
-                "baby_name" : state[["baby_name_1", "baby_name_2", "baby_name_3", "baby_name_4", "baby_name_5"]]
+                "baby_name" : state[["baby_name_1", "baby_name_2", "baby_name_3", "baby_name_4", "baby_name_5"]],
                 "baby_num" : state["num_baby"],
                 #"birth_year" : state["birth_year"],
                 #"birth_year" : state[f"birth_year{i}"], ??
