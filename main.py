@@ -3,7 +3,7 @@ import os
 import streamlit as st
 from dotenv import load_dotenv
 from supabase import create_client
-
+import datetime 
 
 
 
@@ -29,11 +29,12 @@ for i in range(num_baby):
     birth_year = st.text_input(f"Birth Year: ", key=f"birth_year{i}")
     birth_month = st.selectbox(f"Birth Month: ",options=['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'], index= 0)
     birth_date= st.text_input(f"Birth Day(1-31): ", key=f"birth_date{i}")
-    date_ =st.date_input("Birth Date", min_value=None )
+    min_date = datetime.date(1990, 1, 1)
+    date_ =st.date_input("Birth Date", min_value= min_date)
     
 comments = st.text_area("Patient Comment", max_chars=150, placeholder="Comments", key='Comm_d') 
 
-date_.isoformart
+#date_.isoformart
 
  
 
