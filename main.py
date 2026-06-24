@@ -27,9 +27,9 @@ for i in range(num_baby):
     st.text(f"Baby {i+1}")
     name_baby = st.text_input(f"Baby Name: ", key=f"baby_name{i}")
     birth_year = st.text_input(f"Birth Year: ", key=f"birth_year{i}")
-    birth_month = st.selectbox(f"Birth Month: ",options=['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'], index= '-')
+    birth_month = st.selectbox(f"Birth Month: ",options=['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'], index= 0)
     birth_date= st.text_input(f"Birth Day(1-31): ", key=f"birth_date{i}")
-    date_ =st.date_input("Birth Date", min_value=None, max_value="today"  )
+    date_ =st.date_input("Birth Date", min_value=None )
     
 comments = st.text_area("Patient Comment", max_chars=150, placeholder="Comments", key='Comm_d') 
 
