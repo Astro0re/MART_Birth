@@ -19,27 +19,27 @@ email = st.text_input("Email:", key="email_d")
 number = st.text_input("Phone Number:", key="number_d")
 
 # Dropdown menu that generates the input field
-num_baby = st.selectbox("How many babies do you have with us?" , options = [1,2,3,4,5], index = 0)
+num_baby = st.selectbox("How many babies do you have with us?" , options = [1,2,3,4,5], index = 0, key= "baby_num")
 
 # num_baby = int(st.text_input("How many babies(0-5)", key="Baby_num"))
 
 for i in range(num_baby):
     st.text(f"Baby {i+1}")
-    name_baby = st.text_input(f"Baby Name: ", key=f"baby_name{i}")
+    name_baby = st.text_input(f"Baby Name: ", key=f"baby_name_{i+1}")
     #birth_year = st.text_input(f"Birth Year: ", key=f"birth_year{i}")
     #birth_month = st.selectbox(f"Birth Month: ",options=['Jan',# 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'], index= 0)
     #birth_date= st.text_input(f"Birth Day(1-31): ", key=f"birth_date{i}")
     min_date = datetime.date(1990, 1, 1)
-    date_ =st.date_input("Birthday", min_value= min_date)
+    date_ =st.date_input("Birthday", min_value= min_date, key=f"birth_date_{i+1}")
     
-comments = st.text_area("Patient Comment", max_chars=150, placeholder="Comments", key='Comm_d') 
+comments = st.text_area("Comment", max_chars=150, placeholder="Comments", key='Comm_d') 
 
 #date_.isoformart
 
  
 
 if st.button("Submit", key='SUB'):
-
+3
     # Load environment variables from .env
 
     SUPABASE_URL = 'https://qeecgamtitjgtrjfgavs.supabase.co'
@@ -55,13 +55,15 @@ if st.button("Submit", key='SUB'):
     supabase.table("birth_track").insert({
                 "f_name" : state["f_name_d"],
                 "l_name" : state["l_name_d"], 
-                "cycle_id" : state["cycle_id_d"], 
+                #"cycle_id" : state["cycle_id_d"], 
                 "email" : state["email_d"], 
-                "p_number" : state["number_d"], 
-                "birth_year" : state["birth_year"],
+                "p_number" : state["number_d"],
+                "baby_name" : state[["baby_name_1", "baby_name_2", "baby_name_3", "baby_name_4", "baby_name_5"]]
+                "baby_num" : state["num_baby"],
+                #"birth_year" : state["birth_year"],
                 #"birth_year" : state[f"birth_year{i}"], ??
-                "birth_month" : state["birth_month"],
-                "birth_date" : state["birth_date"], 
+                #"birth_month" : state["birth_month"],
+                "birth_date" : state[["birth_date_1", "birth_date_2", "birth_date_3", "birth_date_4", "birth_date_5"]], 
                 "comments" : state["Comm_d"]
                 }).execute()
     if True: 
