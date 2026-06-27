@@ -34,7 +34,7 @@ for i in range(num_baby):
     
 comments = st.text_area("Comment", max_chars=150, placeholder="Comments", key='Comm_d') 
 
-#date_.isoformart
+#date = date_.isoformart()
 
  
 
@@ -73,7 +73,7 @@ if st.button("Submit", key='SUB'):
                 #"birth_year" : state[f"birth_year{i}"], ??
                 #"birth_month" : state["birth_month"],
                 #if state["birth_date_1"] is True: 
-                "birth_date_1" : state["birth_date_1"],
+                "birth_date_1" : state["birth_date_1"].isoformat(),
                 #elif state["birth_date_2"] is True: 
                    # "birth_date_2" : state["birth_date_2"],
                 #elif state["birth_date_3"] is True: 
@@ -89,25 +89,25 @@ if st.button("Submit", key='SUB'):
     if state["baby_name_2"] is True:
         supabase.table("birth_track").insert({
             "baby_name_2": state["baby_name_2"], 
-            "birth_date_2" : state["birth_date_2"]
+            "birth_date_2" : state["birth_date_2"].isoformat()
         }).execute()
 
     if state["baby_name_3"] is True:
         supabase.table("birth_track").insert({
             "baby_name_3": state["baby_name_3"], 
-            "birth_date_3" : state["birth_date_3"]
+            "birth_date_3" : state["birth_date_3"].isoformat()
         }).execute()
 
     if state["baby_name_4"] is True:
         supabase.table("birth_track").insert({
             "baby_name_4": state["baby_name_4"], 
-            "birth_date_4" : state["birth_date_4"]
+            "birth_date_4" : state["birth_date_4"].isoformat()
         }).execute()
 
     if state["baby_name_5"] is True:
         supabase.table("birth_track").insert({
             "baby_name_5": state["baby_name_5"], 
-            "birth_date_5" : state["birth_date_5"]
+            "birth_date_5" : state["birth_date_5"].isoformat()
         }).execute()
 
     if True: 
