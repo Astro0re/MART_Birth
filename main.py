@@ -32,52 +32,36 @@ comments = st.text_area("Comment", max_chars=150, placeholder="Comments", key='C
 
 if st.button("Submit", key='SUB'):
     # Load environment variables from .env
+    load_dotenv()
 
-    SUPABASE_URL = 'https://qeecgamtitjgtrjfgavs.supabase.co'
-    SUPABASE_KEY = 'sb_publishable_wrTu9IK5z9iQyt0C7dYk0g_xfOztP_L'
+    SUPABASE_URL = os.getenv("SUPABASE_URL", 'https://qeecgamtitjgtrjfgavs.supabase.co')
+    SUPABASE_KEY = os.getenv("SUPABASE_KEY", 'sb_publishable_wrTu9IK5z9iQyt0C7dYk0g_xfOztP_L')
 
     if not SUPABASE_URL or not SUPABASE_KEY:
         raise ValueError("SUPABASE_URL and SUPABASE_KEY environment variables must be set")
 
     supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
 
+    data = {
+        "f_name": st.session_state.get("f_name_d", ""),
+        "l_name": st.session_state.get("l_name_d", ""),
+        "email": st.session_state.get("email_d", ""),
+        "p_number": st.session_state.get("number_d", ""),
+        "baby_num": st.session_state.get("baby_num", 1),
+        "comments": st.session_state.get("Comm_d", "")
+    }
 
-    # Supabase input command
-    #try:
-        supabase.table("birth_track").insert({
-            "f_name" : st.session_state["f_name_d"],
-            "l_name" : st.session_state["l_name_d"], 
-            "email" : st.session_state["email_d"], 
-            "p_number" : st.session_state["number_d"],
-            "baby_name_1": st.session_state["baby_name_1"],
-            "baby_num" : st.session_state["baby_num"], 
-            "birth_date_1" : st.session_state["birth_date_1"].isoformat(),
-            "comments" : st.session_state["Comm_d"]
-            }).execute()
+    for i in range(1, int(st.session_state.get("baby_num", 1)) + 1):
+        baby_name_key = f"baby_name_{i}"
+        birth_date_key = f"birth_date_{i}"
 
-    if st.session_state.get("baby_name_2", False):
-        supabase.table("birth_track").insert({
-            "baby_name_2": st.session_state["baby_name_2"], 
-            "birth_date_2" : st.session_state["birth_date_2"].isoformat()
-        }).execute()
+        baby_name = st.session_state.get(baby_name_key, "")
+        if baby_name:
+            data[baby_name_key] = baby_name
 
-    if st.session_state.get("baby_name_3", False):
-        supabase.table("birth_track").insert({
-            "baby_name_3": st.session_state["baby_name_3"], 
-            "birth_date_3" : st.session_state["birth_date_3"].isoformat()
-        }).execute()
+        birth_date = st.session_state.get(birth_date_key)
+        if birth_date:
+            data[birth_date_key] = birth_date.isoformat() if hasattr(birth_date, "isoformat") else birth_date
 
-    if st.session_state.get("baby_name_4", False):
-        supabase.table("birth_track").insert({
-            "baby_name_4": st.session_state["baby_name_4"], 
-            "birth_date_4" : st.session_state["birth_date_4"].isoformat()
-        }).execute()
-
-    if st.session_state.get("baby_name_5", False):
-        supabase.table("birth_track").insert({
-            "baby_name_5": st.session_state["baby_name_5"], 
-            "birth_date_5" : st.session_state["birth_date_5"].isoformat()
-        }).execute()
-
-    if True: 
-        st.info('Data Saved')
+    supabase.table("birth_track").insert(data).execute()
+    st.info('Data Saved')
