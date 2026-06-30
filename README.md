@@ -7,4 +7,4 @@ Birth tracker with automated birth day messages every year
 Function facilitated by Python using streamlit package (v) for display
 
 # Automation
-Python app -> Streamlit database -> Automated messaging system.
+Python app(Streamlit) -> Supabases database -> Automated messaging system.
